@@ -9,28 +9,23 @@ import java.util.Scanner;
  * @author akhilaji
  *
  */
-public abstract class dealershipManager extends MotorVehicles{
-
-	/**
-	 * 
-	 */
-	public dealershipManager() {
-		// TODO Auto-generated constructor stub
-	}
+public class dealershipManager{
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ArrayList<MotorVehicles> car = new ArrayList<MotorVehicles>();
+		
 		Scanner scan = new Scanner(System.in);
 		String input;
 		char command;
 		String name;
-		String color;
+		String color = null;
 		int seats;
-		int price;
+		int price = 0;
+		Car car = new Car(color, color, price, price);
+		inventoryManager m = new inventoryManager();
 
 		System.out.println("Welcome to the Dealership!");
 		System.out.println("Type A to Add new Car to inventory");
@@ -46,28 +41,45 @@ public abstract class dealershipManager extends MotorVehicles{
 			command = input.charAt(0);
 			switch(command) {
 			case 'A':
+				scan.nextLine();
 				System.out.print("Enter Car Name: ");
-				name = scan.next();
+				name = scan.nextLine();
 				System.out.print("Enter Car Color: ");
 				color = scan.next();
 				System.out.print("Enter the Number of Seats: ");
 				seats = scan.nextInt();
 				System.out.print("Enter Car Price: ");
 				price = scan.nextInt();
+				car = new Car( name,  color,  seats,  price);
 				
-				Car car1 = new Car( name,  color,  seats,  price);
-				fleet.add(car1);
+				m.fleet.add(car);
+				
+				
 				System.out.println("Enter next command");
 				
 				break;
 			case 'B':
-				for(int i = 0; i < fleet.size(); i++) {
-					MotorVehicles car2 = fleet.get(i);
-					
+				System.out.println("Current Inventory");
+				int size = 0; 
+				size = m.fleet.size();
+				
+				for(int i = 0; i<size; i++) {
+					car = m.fleet.get(i);
+					System.out.print(car);	
 				}
+				System.out.println("");
+				
 				System.out.println("Enter next command");
 				break;
 			case 'C':
+				System.out.print("Sorting Options");
+				System.out.print("Sort by Price");
+				System.out.print("Sort by Number of Seats");
+				System.out.print("Sort by Car Name");
+				System.out.print("Sort by Car Color");
+				
+				
+				
 				System.out.println("Enter next command");
 				break;
 			case 'D':
@@ -75,6 +87,7 @@ public abstract class dealershipManager extends MotorVehicles{
 				break;
 			case 'Q':
 				System.out.println("Closing");
+				
 				display = false;
 				break;
 			
@@ -86,20 +99,24 @@ public abstract class dealershipManager extends MotorVehicles{
 			}
 			
 		}
-		
-		
-		
-		
-		
+
 
 	}
 	
-	private static void printStats(ArrayList<MotorVehicles> car) {
+	static void printStats(ArrayList<Car> car) {
 		if(car == null) {
 			//Print There are no Cars 
 			System.out.println("The dealership does not have any cars");
 		}
 	}
+
+	public String toString(Car car) {
+		// TODO Auto-generated method stub
+		return "Car name: " +car.getName()+ " Car color: " +car.getColor()+ " Number of seats: " +car.getSeats() +" Price: $" +car.getPrice() ;
+
+	}
+
+	
 	
 
 }

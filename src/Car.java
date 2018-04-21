@@ -1,47 +1,71 @@
+import java.util.Random;
 
-public  class Car extends MotorVehicles {
+public  class Car extends dealershipManager {
 
-	String name;
-	String color;
-	int seats;
-	int price;
+	//instance variables
+	private String name;
+	private String color;
+	private int seats;
+	private int price;
+	private int vin = 0;
+	//static ArrayList<Car> fleet = new ArrayList<Car>();
 	
+	
+	//car constructor
+	//create a new car with a random Vin
 	public Car(String name, String color, int seats, int price) {
 		// TODO Auto-generated constructor stub
 		this.name = name;
 		this.color = color;
 		this.seats = seats;
 		this.price = price;
+		vin = generateVin();
+		
+	}
+	
+	public Car() {
+		// TODO Auto-generated constructor stub
+	}
+
+	private int  generateVin() {
+		Random rand = new Random();
+		vin = rand.nextInt(100000)+1000;		
+		return vin;
+		
 		
 	}
 
-	@Override
+	public void createCar(String name, String color, int seats, int price) {
+		
+	}
+
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	
 	public int getPrice() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
-	@Override
+	
 	public int getSeats() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 	
-	@Override
+	
 	public String getColor() {
 		// TODO Auto-generated method stub
 		String color = "white";
 		return color;
 	}
 	
-	public String toString() {
-		return "Car name: " +name+ "Car color: " +color+ "Number of seats: " +seats +"Price: " +price ;
+	@Override
+	public String toString(Car car) {
+		return "Car name: " +car.name+ " Car color: " +car.color+ " Number of seats: " +car.seats +" Price: $" +car.price ;
 		
 	}
 
