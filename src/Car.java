@@ -41,19 +41,19 @@ public  class Car extends dealershipManager {
 
 	public String getName() {
 		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
 	
 	public int getPrice() {
 		// TODO Auto-generated method stub
-		return 0;
+		return price;
 	}
 	
 	
 	public int getSeats() {
 		// TODO Auto-generated method stub
-		return 0;
+		return seats;
 	}
 	
 	

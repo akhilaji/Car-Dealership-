@@ -1,7 +1,8 @@
-import java.util.ArrayList;
+//import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class inventoryManager extends dealershipManager{
-	ArrayList<Car> fleet = new ArrayList<Car>();	
+	LinkedList<Car> fleet = new LinkedList<Car>();	
 	dealershipManager x = new dealershipManager ();
 	Car c = new Car();
 	

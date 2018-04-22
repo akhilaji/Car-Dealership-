@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
+
 /**
  * 
  */
@@ -14,7 +16,7 @@ public class dealershipManager{
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) {		
 		// TODO Auto-generated method stub
 		
 		Scanner scan = new Scanner(System.in);
@@ -24,22 +26,19 @@ public class dealershipManager{
 		String color = null;
 		int seats;
 		int price = 0;
+		//Instantiate a car object and a new Array
 		Car car = new Car(color, color, price, price);
 		inventoryManager m = new inventoryManager();
 
-		System.out.println("Welcome to the Dealership!");
-		System.out.println("Type A to Add new Car to inventory");
-		System.out.println("Type B to Print current Inventory");
-		System.out.println("Type C to Sort current Inventory");
-		System.out.println("Type D to display the Menu");
-		System.out.println("Type Q to quit");
-		
+		//Print Menu
+		printMenu();
 		
 		boolean display = true;
 		while(display !=false) {
 			input = scan.next();
 			command = input.charAt(0);
 			switch(command) {
+			//This case creates a new car and adds to array
 			case 'A':
 				scan.nextLine();
 				System.out.print("Enter Car Name: ");
@@ -58,6 +57,8 @@ public class dealershipManager{
 				System.out.println("Enter next command");
 				
 				break;
+			
+			//This case prints out the current list 
 			case 'B':
 				System.out.println("Current Inventory");
 				int size = 0; 
@@ -65,12 +66,13 @@ public class dealershipManager{
 				
 				for(int i = 0; i<size; i++) {
 					car = m.fleet.get(i);
-					System.out.print(car);	
+					System.out.print(car.toString(car));	
 				}
 				System.out.println("");
 				
 				System.out.println("Enter next command");
 				break;
+			//This case gives the user options for sorting their list
 			case 'C':
 				System.out.print("Sorting Options");
 				System.out.print("Sort by Price");
@@ -82,8 +84,10 @@ public class dealershipManager{
 				
 				System.out.println("Enter next command");
 				break;
+			
+			//This case prints the menu
 			case 'D':
-				System.out.println("Enter next command");
+				printMenu();
 				break;
 			case 'Q':
 				System.out.println("Closing");
@@ -103,6 +107,18 @@ public class dealershipManager{
 
 	}
 	
+	private static void printMenu() {
+		// TODO Auto-generated method stub
+		System.out.println("Welcome to the Dealership!");
+		System.out.println("Type A to Add new Car to inventory");
+		System.out.println("Type B to Print current Inventory");
+		System.out.println("Type C to Sort current Inventory");
+		System.out.println("Type D to display the Menu");
+		System.out.println("Type Q to quit");
+		
+		
+	}
+
 	static void printStats(ArrayList<Car> car) {
 		if(car == null) {
 			//Print There are no Cars 
@@ -117,7 +133,7 @@ public class dealershipManager{
 	}
 
 	
-	
+
 
 }
 
