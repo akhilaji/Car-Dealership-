@@ -19,14 +19,17 @@ public  class Car extends dealershipManager {
 		this.color = color;
 		this.seats = seats;
 		this.price = price;
+		//creates random vin 
 		vin = generateVin();
 		
 	}
 	
+	//default constructor
 	public Car() {
 		// TODO Auto-generated constructor stub
 	}
 
+	//Assigns each new car a random Vin number using a random number generator
 	private int  generateVin() {
 		Random rand = new Random();
 		vin = rand.nextInt(100000)+1000;		
@@ -39,6 +42,7 @@ public  class Car extends dealershipManager {
 		
 	}
 
+	//Getter Methods for Variable Access
 	public String getName() {
 		// TODO Auto-generated method stub
 		return name;
@@ -63,9 +67,15 @@ public  class Car extends dealershipManager {
 		return color;
 	}
 	
+	public int getVin() {
+		// TODO Auto-generated method stub
+		return vin;
+	}
+	
+	//toString to return formatted Car object information
 	@Override
 	public String toString(Car car) {
-		return "Car name: " +car.name+ " Car color: " +car.color+ " Number of seats: " +car.seats +" Price: $" +car.price ;
+		return "VIN # "+car.vin +" Car name:" +car.name+ " Car color:" +car.color+ " Number of seats:" +car.seats +" Price: $" +car.price +"\n" ;
 		
 	}
 
