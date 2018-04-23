@@ -1,5 +1,12 @@
 import java.util.Random;
 
+/*
+ * CSE 205: <Class 17566> / <Monday/Wednesday 4:35pm> 
+ * Assignment: <assignment 6>
+ * Author(s): <Akhil Aji> & <1212811299>,
+ * Description: <Car class conatains methods required to make a car object>
+ */
+
 public  class Car extends dealershipManager {
 
 	//instance variables
@@ -38,9 +45,6 @@ public  class Car extends dealershipManager {
 		
 	}
 
-	public void createCar(String name, String color, int seats, int price) {
-		
-	}
 
 	//Getter Methods for Variable Access
 	public String getName() {
@@ -63,7 +67,7 @@ public  class Car extends dealershipManager {
 	
 	public String getColor() {
 		// TODO Auto-generated method stub
-		String color = "white";
+		
 		return color;
 	}
 	
