@@ -4,7 +4,7 @@ import java.util.Random;
  * CSE 205: <Class 17566> / <Monday/Wednesday 4:35pm> 
  * Assignment: <assignment 6>
  * Author(s): <Akhil Aji> & <1212811299>,
- * Description: <Car class conatains methods required to make a car object>
+ * Description: <Car class contains methods required to make a car object>
  */
 
 public  class Car extends dealershipManager {

@@ -5,7 +5,7 @@ import java.util.LinkedList;
  * CSE 205: <Class 17566> / <Monday/Wednesday 4:35pm> 
  * Assignment: <assignment 6>
  * Author(s): <Akhil Aji> & <1212811299>,
- * Description: <CMain User Interaction>
+ * Description: <Creates a linked list to manage objects created by users>
  */
 
 //Creates new linked list to store Car objects
